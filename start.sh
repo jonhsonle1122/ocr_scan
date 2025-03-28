@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Cập nhật hệ thống và cài đặt Tesseract OCR
-apt-get update && apt-get install -y tesseract-ocr
+apt-get update && apt-get install -y tesseract-ocr libtesseract-dev
 
 # Cài đặt backend (Python)
 pip install --no-cache-dir -r ./requirements.txt

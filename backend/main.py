@@ -5,7 +5,7 @@ import pytesseract
 from PIL import Image
 from io import BytesIO
 from fastapi.middleware.cors import CORSMiddleware
-pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+
 from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 app.add_middleware(
@@ -15,6 +15,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+print("Tesseract Path:", pytesseract.pytesseract.tesseract_cmd)
 
 # Đường dẫn đến tesseract nếu chạy trên Windows (Cập nhật theo hệ thống của bạn)
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
