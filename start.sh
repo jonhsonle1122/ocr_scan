@@ -1,6 +1,11 @@
 #!/bin/bash
-cd frontend
-npm install && npm run build  # Build frontend
-cd ..
+# Cài đặt Tesseract OCR
 apt-get update && apt-get install -y tesseract-ocr
-uvicorn backend.main:app --host 0.0.0.0 --port 10000  # Chạy backend
+
+# Cài đặt thư viện Python
+pip install -r requirements.txt
+
+# Build frontend
+cd frontend
+npm install && npm run build
+cd ..
