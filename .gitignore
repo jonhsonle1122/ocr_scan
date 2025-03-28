@@ -1,0 +1,25 @@
+# Node.js (React/Vite)
+node_modules/
+dist/
+.vite/
+
+# Python (FastAPI)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+
+# Render / Deployment
+render.yaml
