@@ -15,7 +15,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="static")
 
 # Đường dẫn đến tesseract nếu chạy trên Windows (Cập nhật theo hệ thống của bạn)
 # pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -64,3 +63,4 @@ async def extract_text(url: str = Query(..., description="URL của trang web c�
 
     except Exception as e:
         return {"error": str(e)}
+app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="static")

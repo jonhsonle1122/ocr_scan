@@ -1,11 +1,16 @@
 #!/bin/bash
-# Cài đặt Tesseract OCR
+
+# Cập nhật hệ thống và cài đặt Tesseract OCR
 apt-get update && apt-get install -y tesseract-ocr
 
-# Cài đặt thư viện Python
-pip install -r requirements.txt
+# Cài đặt backend (Python)
+pip install --no-cache-dir -r backend/requirements.txt
 
-# Build frontend
+# Cài đặt frontend (React)
 cd frontend
-npm install && npm run build
+npm install
+npm run build
 cd ..
+
+# Chạy server backend
+# uvicorn backend.main:app --host 0.0.0.0 --port 10000
